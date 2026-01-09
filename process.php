@@ -17,3 +17,35 @@ if ($action === 'start') {
 
 header('Location: list.php'); // 処理が終わったら一覧へ
 ?>
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>勤怠管理システム</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; margin-top: 50px; }
+        .container { border: 1px solid #ccc; padding: 20px; display: inline-block; border-radius: 10px; }
+        input { padding: 10px; font-size: 16px; margin-bottom: 20px; }
+        button { padding: 10px 20px; font-size: 16px; cursor: pointer; margin: 5px; }
+        .start { background-color: #4CAF50; color: white; border: none; }
+        .end { background-color: #f44336; color: white; border: none; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>勤怠入力</h1>
+    <form action="post.php" method="POST">
+        <p>従業員IDを入力してください</p>
+        <input type="number" name="jugyoin_id" required placeholder="例: 1">
+        <br>
+        <button type="submit" name="action" value="start" class="start">出勤</button>
+        <button type="submit" name="action" value="end" class="end">退勤</button>
+    </form>
+    <br>
+    <a href="list.php">履歴一覧を見る</a>
+</div>
+
+</body>
+</html>
